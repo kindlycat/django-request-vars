@@ -1,0 +1,6 @@
+{% load request_vars %}
+
+{% get_variable 'user' as user %}
+<p>{{ user.username }}</p>
+<p>{% get_variable 'additional_key' 'additional_default' %}</p>
+<p>{% get_variable 'not_existed' 'default_value' %}</p>

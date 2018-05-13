@@ -1,0 +1,10 @@
+.*
+*.pyc
+*.egg-info
+dist
+build
+docs/_build
+htmlcov
+
+!.gitignore
+!.travis.yml
