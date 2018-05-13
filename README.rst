@@ -4,9 +4,9 @@ Django request vars
     :target: https://travis-ci.org/kindlycat/django-request-vars
 .. image:: https://coveralls.io/repos/github/kindlycat/django-request-vars/badge.svg?branch=master
     :target: https://coveralls.io/github/kindlycat/django-request-vars?branch=master
+.. image:: https://readthedocs.org/projects/django-request-vars/badge/?version=latest
+    :target: http://django-request-vars.readthedocs.io/en/latest/?badge=latest
 .. image:: https://img.shields.io/pypi/v/django-request-vars.svg
-    :target: https://pypi.org/project/django-request-vars/
-.. image:: https://img.shields.io/pypi/status/django-request-vars.svg
     :target: https://pypi.org/project/django-request-vars/
 .. image:: https://img.shields.io/pypi/pyversions/django-request-vars.svg
     :target: https://pypi.org/project/django-request-vars
@@ -17,6 +17,8 @@ Django request vars
 
 Application that stores current request, user and your defined data in thread
 local variable.
+
+Full documentation on `read the docs`_.
 
 Installation
 ------------
@@ -46,3 +48,5 @@ Add middleware:
         ...
     ]
 
+
+.. _`read the docs`: https://django-request-vars.readthedocs.io/en/master/
