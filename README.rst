@@ -1,5 +1,20 @@
 Django request vars
 ===================
+.. image:: https://travis-ci.org/kindlycat/django-request-vars.svg?branch=master
+    :target: https://travis-ci.org/kindlycat/django-request-vars
+.. image:: https://coveralls.io/repos/github/kindlycat/django-request-vars/badge.svg?branch=master
+    :target: https://coveralls.io/github/kindlycat/django-request-vars?branch=master
+.. image:: https://img.shields.io/pypi/v/django-request-vars.svg
+    :target: https://pypi.org/project/django-request-vars/
+.. image:: https://img.shields.io/pypi/status/django-request-vars.svg
+    :target: https://pypi.org/project/django-request-vars/
+.. image:: https://img.shields.io/pypi/pyversions/django-request-vars.svg
+    :target: https://pypi.org/project/django-request-vars
+.. image:: https://img.shields.io/badge/django-%3E%3D1.11-green.svg
+    :target: https://pypi.org/project/django-request-vars
+.. image:: https://img.shields.io/gitter/room/nwjs/nw.js.svg
+    :target: https://gitter.im/django-request-vars/Lobby
+
 Application that stores current request, user and your defined data in thread
 local variable.
 
