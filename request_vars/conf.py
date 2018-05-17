@@ -9,7 +9,7 @@ DEFAULTS = {
 
 class Settings(object):
     def __getattr__(self, name):
-        if name not in DEFAULTS:
+        if name not in DEFAULTS:  # pragma: no cover
             msg = "'%s' object has no attribute '%s'"
             raise AttributeError(msg % (self.__class__.__name__, name))
         value = getattr(dj_settings, name, DEFAULTS[name])
@@ -17,7 +17,7 @@ class Settings(object):
         return value
 
     def change_setting(self, setting, value, enter, **kwargs):
-        if setting not in DEFAULTS:
+        if setting not in DEFAULTS:  # pragma: no cover
             return
 
         if enter:
