@@ -1,0 +1,4 @@
+django-jinja
+sphinx
+sphinx_rtd_theme
+tox

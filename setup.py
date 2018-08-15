@@ -27,12 +27,14 @@ setup(
     include_package_data=True,
     install_requires=['Django>=1.11'],
     classifiers=[
-        'Development Status :: 4 - Beta',
         'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Framework :: Django :: 1.11',
         'Framework :: Django :: 2.0',
+        'Framework :: Django :: 2.1',
         'License :: OSI Approved :: BSD License',
     ],
 )
