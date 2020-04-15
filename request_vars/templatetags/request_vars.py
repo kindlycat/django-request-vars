@@ -1,8 +1,6 @@
-from __future__ import absolute_import
+from request_vars.utils import get_variable
 
 from django import template
-
-from request_vars.utils import get_variable
 
 
 try:

@@ -1,7 +1,7 @@
-from django.utils.module_loading import import_string
-
 from request_vars.conf import settings
 from request_vars.utils import clear_thread_variable, set_variable
+
+from django.utils.module_loading import import_string
 
 
 class RequestVarsMiddleware(object):
