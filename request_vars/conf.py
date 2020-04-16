@@ -2,9 +2,7 @@ from django.conf import settings as dj_settings
 from django.core.signals import setting_changed
 
 
-DEFAULTS = {
-    'REQUEST_VARS_MIDDLEWARE_CALLBACK': None
-}
+DEFAULTS = {'REQUEST_VARS_MIDDLEWARE_CALLBACK': None}
 
 
 class Settings(object):

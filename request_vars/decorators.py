@@ -18,4 +18,5 @@ def request_cache(func):
         if get_variable('request'):
             set_variable(name, result)
         return result
+
     return wrapped

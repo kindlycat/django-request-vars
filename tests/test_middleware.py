@@ -1,9 +1,9 @@
+from request_vars import REQUEST_VARS
+from request_vars.decorators import request_cache
+
 from django.contrib.auth.models import User
 from django.test import TestCase
 from django.test.utils import override_settings
-
-from request_vars import REQUEST_VARS
-from request_vars.decorators import request_cache
 
 
 def middleware_callback(request):
@@ -23,8 +23,9 @@ class MiddlewareTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_logged_in_user(self):
-        User.objects.create_user(username='test_user',
-                                 password='test_password')
+        User.objects.create_user(
+            username='test_user', password='test_password'
+        )
         self.client.login(username='test_user', password='test_password')
         response = self.client.get('/test_view/')
         self.assertEqual(response.status_code, 200)

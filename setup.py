@@ -2,9 +2,8 @@ from __future__ import unicode_literals
 
 from distutils.core import setup
 
-from setuptools import find_packages
-
 from request_vars import __version__
+from setuptools import find_packages
 
 
 def readme():
@@ -16,10 +15,17 @@ setup(
     name='django-request-vars',
     version=__version__,
     description='Stores current request, user and your defined data in thread '
-                'local variable.',
+    'local variable.',
     long_description=readme(),
-    keywords=['django', 'thread', 'variable', 'request', 'user', 'cache',
-              'middleware'],
+    keywords=[
+        'django',
+        'thread',
+        'variable',
+        'request',
+        'user',
+        'cache',
+        'middleware',
+    ],
     author='Grigory Mishchenko',
     author_email='grishkokot@gmail.com',
     url='https://github.com/kindlycat/django-request-vars/',

@@ -1,7 +1,8 @@
+from request_vars.utils import get_variable, set_variable
+
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from request_vars.utils import get_variable, set_variable
 from tests.test_middleware import request_cache_fn
 
 
@@ -16,8 +17,9 @@ def test_view(request):
         raise AssertionError('Bad user value.')
 
     # test callback
-    if request.GET.get('callback') and \
-            request.GET['callback'] != get_variable('callback'):
+    if request.GET.get('callback') and request.GET['callback'] != get_variable(
+        'callback'
+    ):
         raise AssertionError('Bad callback value.')
     return HttpResponse('')
 

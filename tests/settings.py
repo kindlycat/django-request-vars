@@ -9,7 +9,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'request_vars',
     'django_jinja',
     'tests.test_app',
@@ -23,7 +22,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
     'request_vars.middleware.RequestVarsMiddleware',
 ]
 
@@ -33,9 +31,7 @@ TEMPLATES = [
     {
         "BACKEND": "django_jinja.backend.Jinja2",
         "APP_DIRS": True,
-        "OPTIONS": {
-            "match_extension": ".jinja",
-        }
+        "OPTIONS": {"match_extension": ".jinja"},
     },
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -53,8 +49,5 @@ TEMPLATES = [
 ]
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': ':memory:',
-    }
+    'default': {'ENGINE': 'django.db.backends.sqlite3', 'NAME': ':memory:'}
 }
