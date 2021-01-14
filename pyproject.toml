@@ -4,9 +4,20 @@ include = '\.pyi?$'
 skip-string-normalization = true
 exclude = '''
 (
-  migrations
-  | \.\*
-  | .venv
+  \.\*
+  | migrations
   | docs
+  | build
+  | __pycache__
 )
 '''
+
+
+[tool.isort]
+line_length = 79
+multi_line_output = 3
+lines_after_imports = 2
+sections = ['FUTURE', 'STDLIB', 'THIRDPARTY', 'DJANGO', 'FIRSTPARTY', 'LOCALFOLDER']
+skip_glob = ['migrations', 'docs', 'build', '.*', '__pycache__']
+known_django = ['django']
+include_trailing_comma = true

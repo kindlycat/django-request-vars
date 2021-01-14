@@ -1,3 +1,5 @@
+from django.test.testcases import SimpleTestCase
+
 from request_vars import REQUEST_VARS
 from request_vars.utils import (
     clear_thread_variable,
@@ -5,8 +7,6 @@ from request_vars.utils import (
     get_variable,
     set_variable,
 )
-
-from django.test.testcases import SimpleTestCase
 
 
 class UtilsTestCase(SimpleTestCase):

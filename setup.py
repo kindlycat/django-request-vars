@@ -1,9 +1,6 @@
-from __future__ import unicode_literals
-
-from distutils.core import setup
+import setuptools
 
 from request_vars import __version__
-from setuptools import find_packages
 
 
 def readme():
@@ -11,7 +8,7 @@ def readme():
         return f.read()
 
 
-setup(
+setuptools.setup(
     name='django-request-vars',
     version=__version__,
     description='Stores current request, user and your defined data in thread '
@@ -29,7 +26,7 @@ setup(
     author='Grigory Mishchenko',
     author_email='grishkokot@gmail.com',
     url='https://github.com/kindlycat/django-request-vars/',
-    packages=find_packages(exclude=('tests*',)),
+    packages=setuptools.find_packages(exclude=('tests*',)),
     include_package_data=True,
     install_requires=['Django>=1.11'],
     classifiers=[

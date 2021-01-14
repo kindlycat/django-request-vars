@@ -1,8 +1,7 @@
-from request_vars.utils import get_variable, set_variable
-
 from django.http import HttpResponse
 from django.shortcuts import render
 
+from request_vars.utils import get_variable, set_variable
 from tests.test_middleware import request_cache_fn
 
 

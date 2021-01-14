@@ -1,9 +1,9 @@
-from request_vars import REQUEST_VARS
-from request_vars.decorators import request_cache
-
 from django.contrib.auth.models import User
 from django.test import TestCase
 from django.test.utils import override_settings
+
+from request_vars import REQUEST_VARS
+from request_vars.decorators import request_cache
 
 
 def middleware_callback(request):
