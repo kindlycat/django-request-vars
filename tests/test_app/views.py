@@ -2,13 +2,14 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 from request_vars.utils import get_variable, set_variable
+from tests.test_app.exceptions import RequestVarsError
 from tests.test_middleware import request_cache_fn
 
 
 def test_view(request):
     # test exception
     if request.GET.get('exception'):
-        raise Exception
+        raise RequestVarsError
 
     if request != get_variable('request'):
         raise AssertionError('Bad request value.')
@@ -23,7 +24,7 @@ def test_view(request):
     return HttpResponse('')
 
 
-def request_cache_view(request):
+def request_cache_view(_):
     val = request_cache_fn('test')
     if val != 'test':
         raise AssertionError('Bad request_cache first call value.')

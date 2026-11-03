@@ -1,0 +1,2 @@
+class RequestVarsError(Exception):
+    pass

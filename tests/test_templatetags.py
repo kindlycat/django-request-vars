@@ -1,22 +1,26 @@
-from django.contrib.auth.models import User
-from django.test import TestCase
+import pytest
+from django.contrib.auth import get_user_model
 
 
-class TemplatetagsTestCase(TestCase):
-    def setUp(self):
-        self.user = User.objects.create_user(
-            username='test_user', password='test_password'
-        )
-        self.client.login(username='test_user', password='test_password')
+@pytest.mark.django_db
+def test_django_template(client):
+    get_user_model().objects.create_user(
+        username='test_user', password='test_password'
+    )
+    client.login(username='test_user', password='test_password')
+    response = client.get('/test_django_template_tag/')
+    assert b'test_user' in response.content
+    assert b'additional_value' in response.content
+    assert b'default_value' in response.content
 
-    def test_django_template(self):
-        response = self.client.get('/test_django_template_tag/')
-        self.assertContains(response, 'test_user')
-        self.assertContains(response, 'additional_value')
-        self.assertContains(response, 'default_value')
 
-    def test_jinja_template(self):
-        response = self.client.get('/test_jinja_template_tag/')
-        self.assertContains(response, 'test_user')
-        self.assertContains(response, 'additional_value')
-        self.assertContains(response, 'default_value')
+@pytest.mark.django_db
+def test_jinja_template(client):
+    get_user_model().objects.create_user(
+        username='test_user', password='test_password'
+    )
+    client.login(username='test_user', password='test_password')
+    response = client.get('/test_jinja_template_tag/')
+    assert b'test_user' in response.content
+    assert b'additional_value' in response.content
+    assert b'default_value' in response.content

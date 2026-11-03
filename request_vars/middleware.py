@@ -1,14 +1,16 @@
+from typing import Any
+
 from django.utils.module_loading import import_string
 
 from request_vars.conf import settings
 from request_vars.utils import clear_thread_variable, set_variable
 
 
-class RequestVarsMiddleware(object):
-    def __init__(self, get_response):
+class RequestVarsMiddleware:
+    def __init__(self, get_response) -> None:
         self.get_response = get_response
 
-    def __call__(self, request):
+    def __call__(self, request) -> Any:
         set_variable('request', request)
         set_variable('user', request.user)
         if settings.REQUEST_VARS_MIDDLEWARE_CALLBACK:
@@ -17,5 +19,5 @@ class RequestVarsMiddleware(object):
         clear_thread_variable()
         return response
 
-    def process_exception(self, request, exception):
+    def process_exception(self, request, exception) -> None:
         clear_thread_variable()
