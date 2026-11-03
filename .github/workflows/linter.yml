@@ -13,12 +13,12 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Ruff check
-        uses: astral-sh/ruff-action@v4
+        uses: astral-sh/ruff-action@v4.1.0
         with:
           version: 0.17.3
 
       - name: Ruff format
-        uses: astral-sh/ruff-action@v4
+        uses: astral-sh/ruff-action@v4.1.0
         with:
           version: 0.17.3
-          args: 'format --check'
+          args: "format --check"
