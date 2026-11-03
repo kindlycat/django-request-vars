@@ -17,8 +17,8 @@ Full documentation on `read the docs`_.
 Requirements
 ------------
 
-**Django:** >= 1.11
-**Python:** 2.7, >=3.4
+**Django:** 5.2, 6.0, 6.1
+**Python:** 3.11+
 
 Installation
 ------------

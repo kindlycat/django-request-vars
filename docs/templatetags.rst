@@ -12,22 +12,19 @@ Django
 
 Jinja2
 ------
-If you use ``django-jinja``:
 
 .. code-block:: jinja
 
     {% set var = get_variable('some_variable', 'default') %}
 
 
-If you use jinja2 backend, then define it in environment:
-
 .. code-block:: python
 
-    from jinja2 import Environment
+    import jinja2
     from request_vars.utils import get_variable
 
     def environment(**options):
-        env = Environment(**options)
+        env = jinja2.Environment(**options)
         env.globals.update({
             ...
             'get_variable': get_variable,

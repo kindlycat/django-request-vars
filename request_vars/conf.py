@@ -1,3 +1,5 @@
+from typing import Any
+
 from django.conf import settings as dj_settings
 from django.core.signals import setting_changed
 
@@ -5,8 +7,8 @@ from django.core.signals import setting_changed
 DEFAULTS = {'REQUEST_VARS_MIDDLEWARE_CALLBACK': None}
 
 
-class Settings(object):
-    def __getattr__(self, name):
+class Settings:
+    def __getattr__(self, name) -> Any:
         if name not in DEFAULTS:  # pragma: no cover
             msg = "'%s' object has no attribute '%s'"
             raise AttributeError(msg % (self.__class__.__name__, name))
@@ -14,7 +16,7 @@ class Settings(object):
         setattr(self, name, value)
         return value
 
-    def change_setting(self, setting, value, enter, **kwargs):
+    def change_setting(self, setting, value, enter, **kwargs) -> None:
         if setting not in DEFAULTS:  # pragma: no cover
             return
 

@@ -2,10 +2,10 @@ from request_vars import REQUEST_VARS
 
 
 __all__ = [
-    'set_variable',
-    'get_variable',
-    'del_variable',
     'clear_thread_variable',
+    'del_variable',
+    'get_variable',
+    'set_variable',
 ]
 
 

@@ -5,7 +5,11 @@ dist
 build
 docs/_build
 htmlcov
+.pytest_cache
+.coverage
+coverage.xml
 __pycache__
 
 !.gitignore
-!.travis.yml
+!.github
+!.readthedocs.yaml
